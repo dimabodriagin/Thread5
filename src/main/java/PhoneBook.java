@@ -1,4 +1,6 @@
 import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Optional;
 import java.util.TreeMap;
 
 public class PhoneBook {
@@ -14,6 +16,14 @@ public class PhoneBook {
     }
 
     public String findByNumber(String number) {
+        Optional<String> result = phoneBook.entrySet()
+                .stream()
+                .filter(entry -> number.equals(entry.getValue()))
+                .map(Entry::getKey)
+                .findFirst();
+
+        if (result.isPresent())
+            return result.get();
         return null;
     }
 }
