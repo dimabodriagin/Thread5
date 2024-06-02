@@ -30,7 +30,7 @@ public class PhoneBookTest {
     }
 
     @Test
-    public void testFindByNumber_name_exists() {
+    public void testFindByNumber() {
         PhoneBook phoneBook = new PhoneBook();
         phoneBook.add("Name", "+79452007010");
 
@@ -39,5 +39,13 @@ public class PhoneBookTest {
         Assertions.assertEquals(name, "Name");
     }
 
+    @Test
+    public void testFindByName() {
+        PhoneBook phoneBook = new PhoneBook();
+        phoneBook.add("Name", "+79452007010");
 
+        String number = phoneBook.findByName("Name");
+
+        Assertions.assertEquals(number, "+79452007010");
+    }
 }
