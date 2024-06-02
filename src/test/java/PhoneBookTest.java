@@ -20,6 +20,16 @@ public class PhoneBookTest {
     }
 
     @Test
+    public void testAdd_repeatName() {
+        PhoneBook phoneBook = new PhoneBook();
+        phoneBook.add("Name", "+79452007010");
+
+        Assertions.assertThrows(IllegalArgumentException.class, () -> {
+            phoneBook.add("Name", "+79372003040");
+        });
+    }
+
+    @Test
     public void testFindByNumber_name_exists() {
         PhoneBook phoneBook = new PhoneBook();
         phoneBook.add("Name", "+79452007010");

@@ -11,6 +11,7 @@ public class PhoneBook {
         if (phoneBook == null) {
             phoneBook = new TreeMap<>();
         }
+
         phoneBook.put(name, number);
         return phoneBook.size();
     }
