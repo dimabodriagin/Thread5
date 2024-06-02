@@ -18,4 +18,16 @@ public class PhoneBookTest {
 
         Assertions.assertEquals(result, phoneMap.size());
     }
+
+    @Test
+    public void testFindByNumber_name_exists() {
+        PhoneBook phoneBook = new PhoneBook();
+        phoneBook.add("Name", "+79452007010");
+
+        String name = phoneBook.findByNumber("+79452007010");
+
+        Assertions.assertEquals(name, "Name");
+    }
+
+
 }
