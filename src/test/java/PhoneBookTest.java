@@ -48,4 +48,16 @@ public class PhoneBookTest {
 
         Assertions.assertEquals(number, "+79452007010");
     }
+
+    @Test
+    public void testPrintAllNames() {
+        PhoneBook phoneBook = new PhoneBook();
+        phoneBook.add("Ame", "+79452007010");
+        phoneBook.add("Cate", "89452004050");
+        phoneBook.add("Bjorg", "+7900302010");
+
+        String allNames = phoneBook.printAllNames();
+
+        Assertions.assertEquals(allNames, "[Ame, Bjorg, Cate]");
+    }
 }

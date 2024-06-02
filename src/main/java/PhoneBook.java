@@ -33,4 +33,8 @@ public class PhoneBook {
     public String findByName(String name) {
         return phoneBook.get(name);
     }
+
+    public String printAllNames() {
+        return null;
+    }
 }
