@@ -7,11 +7,13 @@ public class PhoneBook {
 
     private Map<String, String> phoneBook;
 
-    public int add(String name, String number) {
+    public int add(String name, String number) throws IllegalArgumentException {
         if (phoneBook == null) {
             phoneBook = new TreeMap<>();
         }
-
+        if (phoneBook.containsKey(name)) {
+            throw new IllegalArgumentException("This name is already in phone book");
+        }
         phoneBook.put(name, number);
         return phoneBook.size();
     }
